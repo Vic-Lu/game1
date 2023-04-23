@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-
+// hola furro
 
 
 
@@ -15,13 +16,12 @@ public class GameStart : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        bool pressBotton;
+       // SceneManager.LoadScene(0); 
+    }
 
-
-      
-        { 
-
-        }
+    public void InicioGame()
+    {
+        SceneManager.LoadScene(2);
     }
 
     // easy questions 
@@ -109,9 +109,5 @@ public class GameStart : MonoBehaviour
 
 
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 }
