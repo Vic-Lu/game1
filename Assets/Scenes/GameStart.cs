@@ -36,6 +36,19 @@ public class GameStart : MonoBehaviour
     // 9 ¿ que no es cripto ?
     // 10 ¿ cual de estas no es un clasico de navidad?
 
+    //
+    // easy answers
+    // 1   en el patio ,  el espacio, el sistema solar(*) , una galaxia muy lejana
+    // 2  cafe-morado-naranja , amarillo-azul-rojo(*),  verde-rosa-azul, verde-azul-rojo
+    // 3  en su nido , una montaña, un poste, un nopal(*)
+    // 4  cloroformo(*) , anis , petalos, curcuma
+    // 5  negra, azul, roja(*), morada 
+    // 6 un hocho(*), odio(*), una moda, tecnicsismo
+    // 7  el valor de ¨X¨  , el valor de dinero, el agua moja, que no te quiere(*)
+    // 8 obvio tu, el brayan, ¿cual caballo?(*), blanco   
+    // 9 comida(*), un perro, una moneda, ET
+    // 10  un cuento de navidad, the thing, gremlings, home alone
+
     //  ________________________________________________________________
 
     // normal questions 
@@ -66,17 +79,7 @@ public class GameStart : MonoBehaviour
 
     // ==================================================================
 
-    // easy answers
-    // 1   en el patio ,  el espacio, el sistema solar(*) , una galaxia muy lejana
-    // 2  cafe-morado-naranja , amarillo-azul-rojo(*),  verde-rosa-azul, verde-azul-rojo
-    // 3  en su nido , una montaña, un poste, un nopal(*)
-    // 4  cloroformo(*) , anis , petalos, curcuma
-    // 5  negra, azul, roja(*), morada 
-    // 6 un hocho(*), odio(*), una moda, tecnicsismo
-    // 7  el valor de ¨X¨  , el valor de dinero, el agua moja, que no te quiere(*)
-    // 8 obvio tu, el brayan, ¿cual caballo?(*), blanco   
-    // 9 comida(*), un perro, una moneda, ET
-    // 10  un cuento de navidad, the thing, gremlings, home alone
+
 
     //  _________________________________________________________________
 
@@ -109,5 +112,5 @@ public class GameStart : MonoBehaviour
 
 
 
-   
+
 }
