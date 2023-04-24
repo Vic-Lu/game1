@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class nivelNoob : MonoBehaviour
 {
@@ -68,16 +69,18 @@ public class nivelNoob : MonoBehaviour
         // Cerrar todos los paneles
         cerrarTodosPaneles();
 
-        //
+        // regresar valor a 10
         if (preguntaActual >= 10)
         {
-            // Pasar a puntuacion final
+            PlayerPrefs.SetInt("puntuacion", playerScore);
+            SceneManager.LoadScene(5);
         }
         else
         {
             // Abrir siguiente pregunta
             aregloQuestion[preguntaActual].SetActive(true);
         }
+
     }
 
     public void cerrarTodosPaneles()
