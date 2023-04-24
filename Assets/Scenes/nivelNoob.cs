@@ -23,6 +23,8 @@ public class nivelNoob : MonoBehaviour
     public GameObject Q8;
     public GameObject Q9;
     public GameObject Q10;
+
+    int preguntaActual;
     void rewriteTextScore(int puntos)
     {
         Score.SetText(puntos.ToString() + " puntos");
@@ -31,12 +33,81 @@ public class nivelNoob : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         playerScore = 0;
+        preguntaActual = 0;
         rewriteTextScore(playerScore);
-        Debug.Log(Q1);
+        indexarAreglo();
+        cerrarTodosPaneles();
+        mezclarPreguntas();
+        aregloQuestion[preguntaActual].SetActive(true);
+    }
 
-        // Q1.SetActive(true);
-    
+    public void revisarRespuesta()
+    {
+        GameObject boton = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject;
+        bool esCorrecto = boton.GetComponent<mejoraboton>().bottonCorrect;
+
+        if (esCorrecto == true)
+        {
+            // Si es correcto
+            playerScore = playerScore + 100;
+            rewriteTextScore(playerScore);
+            preguntaActual = preguntaActual + 1;
+            siguientePregunta();
+        }
+        else
+        {
+            // Si no es correcto
+        }
+
+    }
+
+    public void siguientePregunta()
+    {
+        // Cerrar todos los paneles
+        cerrarTodosPaneles();
+
+        //
+        if (preguntaActual >= 10)
+        {
+            // Pasar a puntuacion final
+        }
+        else
+        {
+            // Abrir siguiente pregunta
+            aregloQuestion[preguntaActual].SetActive(true);
+        }
+    }
+
+    public void cerrarTodosPaneles()
+    {
+        aregloQuestion[0].SetActive(false);
+        aregloQuestion[1].SetActive(false);
+        aregloQuestion[2].SetActive(false);
+        aregloQuestion[3].SetActive(false);
+        aregloQuestion[4].SetActive(false);
+        aregloQuestion[5].SetActive(false);
+        aregloQuestion[6].SetActive(false);
+        aregloQuestion[7].SetActive(false);
+        aregloQuestion[8].SetActive(false);
+        aregloQuestion[9].SetActive(false);
+    }
+
+    public void mezclarPreguntas()
+    {
+        GameObject temporal;
+        for (int i = 0; i < aregloQuestion.Length; i++)
+        {
+            int numeroRandom = Random.Range(0, aregloQuestion.Length);
+            temporal = aregloQuestion[numeroRandom];
+            aregloQuestion[numeroRandom] = aregloQuestion[i];
+            aregloQuestion[i] = temporal;
+        }
+    }
+
+    void indexarAreglo()
+    {
         aregloQuestion[0] = Q1;
         aregloQuestion[1] = Q2;
         aregloQuestion[2] = Q3;
@@ -48,12 +119,6 @@ public class nivelNoob : MonoBehaviour
         aregloQuestion[8] = Q9;
         aregloQuestion[9] = Q10;
 
-        aregloQuestion[0].SetActive(true); 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
